@@ -1,0 +1,2375 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f6f4ea;
+  color: #171717;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+.container {
+  width: min(1180px, 94%);
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+  background: #151520;
+  width: 100%;
+}
+
+
+/* TOP HEADER */
+
+.top-header {
+  height: 92px;
+  background: #151520;
+}
+
+.top-inner {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 45px;
+}
+
+
+/* LOGO */
+
+.brand {
+  width: 190px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+}
+
+.brand img {
+  width: 190px;
+  max-height: 70px;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+
+/* SEARCH */
+
+.search-box {
+  height: 48px;
+
+  flex: 1;
+  max-width: 720px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 20px;
+
+  border: 2px solid #e12626;
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  color: #55555d;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.05),
+    0 5px 15px rgba(0,0,0,.18);
+}
+
+
+/* =========================================================
+   CATEGORY BAR
+========================================================= */
+
+.category-bar {
+  background: #151520;
+
+  border-top: 1px solid rgba(255,255,255,.06);
+  border-bottom: 1px solid #c5a741;
+}
+
+.category-inner {
+  min-height: 78px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  overflow-x: auto;
+
+  scrollbar-width: thin;
+}
+
+.category-inner::-webkit-scrollbar {
+  height: 4px;
+}
+
+.category-inner::-webkit-scrollbar-thumb {
+  background: #9c812a;
+}
+
+
+/* SHOP ALL */
+
+.shop-button {
+  flex-shrink: 0;
+
+  padding: 8px 14px;
+
+  border: 2px solid #6876ff;
+  border-radius: 9px;
+
+  color: #ffffff;
+
+  text-align: center;
+
+  font-size: 11px;
+  font-weight: 900;
+
+  line-height: 1.05;
+
+  transition: .2s ease;
+}
+
+.shop-button:hover {
+  background: rgba(104,118,255,.12);
+
+  transform: translateY(-2px);
+}
+
+
+/* CATEGORY ITEM */
+
+.category-item {
+  min-width: 70px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  color: #ffffff;
+
+  font-size: 10px;
+  font-weight: 900;
+
+  white-space: nowrap;
+
+  transition: .2s ease;
+}
+
+.category-item:hover {
+  color: #f0c844;
+
+  transform: translateY(-2px);
+}
+
+
+/* CATEGORY ICON */
+
+.category-icon {
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  border: 2px solid #d1b64d;
+
+  background:
+    radial-gradient(
+      circle,
+      #756516 0%,
+      #29240b 45%,
+      #080808 75%
+    );
+
+  color: #f1d35a;
+
+  font-size: 11px;
+
+  box-shadow:
+    inset 0 0 12px rgba(255,215,80,.12),
+    0 2px 8px rgba(0,0,0,.4);
+
+  transition: .2s ease;
+}
+
+.category-item:hover .category-icon {
+  box-shadow:
+    0 0 15px rgba(239,201,75,.25),
+    inset 0 0 14px rgba(255,215,80,.18);
+}
+
+
+/* =========================================================
+   LOGIN / DAFTAR
+========================================================= */
+
+.auth-bar {
+  height: 50px;
+
+  display: flex;
+
+  background: #eeeeee;
+}
+
+.login-button,
+.register-button {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 900;
+
+  overflow: hidden;
+
+  transition:
+    transform .22s ease,
+    filter .22s ease,
+    box-shadow .22s ease;
+}
+
+
+/* LOGIN */
+
+.login-button {
+  width: 40%;
+
+  background:
+    linear-gradient(
+      180deg,
+      #160404 0%,
+      #a00808 100%
+    );
+}
+
+
+/* REGISTER */
+
+.register-button {
+  flex: 1;
+
+  background:
+    linear-gradient(
+      180deg,
+      #160404 0%,
+      #a00808 100%
+    );
+}
+
+
+/* SHINE EFFECT */
+
+.login-button::before,
+.register-button::before,
+.red-button::before,
+.hoki-button::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -130%;
+
+  width: 55%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      105deg,
+      transparent 0%,
+      rgba(255,255,255,.08) 35%,
+      rgba(255,255,255,.6) 50%,
+      rgba(255,255,255,.08) 65%,
+      transparent 100%
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left .65s ease;
+
+  pointer-events: none;
+}
+
+.login-button:hover,
+.register-button:hover {
+  transform: translateY(-2px);
+
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 6px 18px rgba(0,0,0,.25);
+}
+
+.login-button:hover::before,
+.register-button:hover::before,
+.red-button:hover::before,
+.hoki-button:hover::before {
+  left: 135%;
+}
+
+.login-button:active,
+.register-button:active {
+  transform: scale(.99);
+}
+
+
+/* =========================================================
+   PRODUCT SECTION
+========================================================= */
+
+.product-section {
+  padding: 42px 0 50px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fbfaf2 0%,
+      #f3f1e5 100%
+    );
+}
+
+.product-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.08fr)
+    minmax(340px, .92fr);
+
+  gap: 32px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   BANNER
+========================================================= */
+
+.banner-area {
+  position: relative;
+
+  width: 100%;
+}
+
+.banner-box {
+  display: block;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  border: 1px solid #9d7b20;
+
+  background: #111111;
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.25);
+
+  transition:
+    transform .28s ease,
+    box-shadow .28s ease;
+}
+
+.banner-box:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 32px rgba(0,0,0,.32),
+    0 0 22px rgba(219,174,43,.12);
+}
+
+.banner-box img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  transition:
+    transform .45s ease;
+}
+
+.banner-box:hover img {
+  transform: scale(1.012);
+}
+
+
+/* SLIDER BUTTON */
+
+.slider-button {
+  position: absolute;
+
+  top: 50%;
+
+  z-index: 5;
+
+  transform: translateY(-50%);
+
+  width: 40px;
+  height: 40px;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #111111;
+
+  font-size: 30px;
+  line-height: 35px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 3px 12px rgba(0,0,0,.35);
+
+  transition: .2s ease;
+}
+
+.slider-button:hover {
+  background: #f2c544;
+
+  transform:
+    translateY(-50%)
+    scale(1.08);
+}
+
+.slider-button.left {
+  left: -15px;
+}
+
+.slider-button.right {
+  right: -15px;
+}
+
+
+/* =========================================================
+   PRODUCT INFORMATION
+========================================================= */
+
+.product-info {
+  padding-top: 3px;
+}
+
+.product-info h1 {
+  margin-bottom: 18px;
+
+  color: #15151b;
+
+  font-size: 27px;
+
+  line-height: 1.08;
+
+  font-weight: 900;
+}
+
+.price {
+  margin-bottom: 20px;
+
+  color: #15151b;
+
+  font-size: 39px;
+
+  line-height: 1;
+
+  font-weight: 900;
+}
+
+.product-category {
+  margin-bottom: 40px;
+
+  color: #55555c;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.product-buttons {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 13px;
+
+  margin-bottom: 27px;
+}
+
+.red-button {
+  position: relative;
+
+  min-height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ff2413 0%,
+      #c00000 100%
+    );
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 900;
+
+  box-shadow:
+    0 4px 12px rgba(170,0,0,.30),
+    0 0 0 1px rgba(255,180,50,.10);
+
+  transition:
+    transform .22s ease,
+    filter .22s ease,
+    box-shadow .22s ease;
+}
+
+.red-button:hover {
+  transform: translateY(-2px);
+
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 8px 22px rgba(180,0,0,.38),
+    0 0 18px rgba(255,80,30,.18);
+}
+
+.red-button:active {
+  transform: scale(.985);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.description {
+  color: #2d2d31;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+.description p {
+  margin-bottom: 16px;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.content-section {
+  padding: 18px 0 60px;
+
+  background: #f6f4ea;
+}
+
+.content-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(320px, .95fr);
+
+  gap: 30px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   BOX COMMON
+========================================================= */
+
+.faq-box,
+.info-box,
+.profile-box,
+.testimonial-box,
+.hoki-box {
+  margin-bottom: 25px;
+
+  overflow: hidden;
+
+  border: 1px solid #a48122;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 4px 13px rgba(0,0,0,.12);
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.section-title {
+  padding: 14px 18px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff1708 0%,
+      #b90000 100%
+    );
+
+  color: #ffffff;
+
+  font-size: 16px;
+
+  font-weight: 900;
+}
+
+.red-title {
+  background:
+    linear-gradient(
+      90deg,
+      #ff1708,
+      #a90000
+    );
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.faq-item {
+  border-bottom: 1px solid #4a3b12;
+}
+
+.faq-question {
+  width: 100%;
+
+  padding: 15px 18px;
+
+  border: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      #382d0c,
+      #292108
+    );
+
+  color: #eeeeee;
+
+  text-align: left;
+
+  font-size: 14px;
+
+  font-weight: 900;
+
+  cursor: pointer;
+
+  transition: .2s ease;
+}
+
+.faq-question:hover {
+  background:
+    linear-gradient(
+      90deg,
+      #4a390e,
+      #302508
+    );
+
+  color: #ffd95a;
+}
+
+.faq-answer {
+  padding: 15px 18px;
+
+  background: #faf8ed;
+
+  color: #333333;
+
+  font-size: 13px;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   INFORMATION TABLE
+========================================================= */
+
+.info-box table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  background: #211d09;
+
+  color: #eeeeee;
+}
+
+.info-box td {
+  padding: 12px 15px;
+
+  border-bottom: 1px solid #4a401a;
+
+  font-size: 12px;
+}
+
+.info-box td:first-child {
+  width: 42%;
+
+  color: #ffffff;
+
+  font-weight: 900;
+}
+
+.copyright {
+  padding: 10px;
+
+  background: #8e1008;
+
+  color: #ffffff;
+
+  text-align: center;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile-box {
+  padding-bottom: 14px;
+}
+
+.profile-box p {
+  margin-top: 15px;
+
+  padding: 0 17px;
+
+  color: #333333;
+
+  font-size: 13px;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   HOKI
+========================================================= */
+
+.hoki-box {
+  position: relative;
+
+  padding-bottom: 20px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #49370b 0%,
+      #211a06 55%,
+      #110d03 100%
+    );
+
+  color: #ffffff;
+}
+
+.hoki-box h3 {
+  padding: 13px;
+
+  background:
+    linear-gradient(
+      #ef160b,
+      #9c0804
+    );
+
+  text-align: center;
+
+  font-size: 15px;
+
+  font-weight: 900;
+}
+
+.numbers {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  margin: 22px 0;
+}
+
+.numbers span {
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  border: 2px solid #e7b92d;
+
+  background:
+    radial-gradient(
+      circle,
+      #f00000,
+      #9b0000
+    );
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 900;
+
+  box-shadow:
+    0 0 12px rgba(240,0,0,.20);
+}
+
+.hoki-button {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+
+  padding: 0 20px;
+
+  overflow: hidden;
+
+  border: 1px solid #e4bd3b;
+
+  border-radius: 8px;
+
+  background: #171717;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 900;
+
+  transition: .2s ease;
+}
+
+.hoki-button:hover {
+  transform: translateY(-2px);
+
+  background: #222222;
+
+  box-shadow:
+    0 6px 15px rgba(0,0,0,.3);
+}
+
+
+/* =========================================================
+   TESTIMONIAL
+========================================================= */
+
+.testimonial {
+  margin: 10px;
+
+  padding: 12px;
+
+  border: 1px solid #6c5518;
+
+  border-radius: 8px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #352a0d,
+      #211907
+    );
+
+  color: #eeeeee;
+
+  transition: .2s ease;
+}
+
+.testimonial:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 15px rgba(0,0,0,.18);
+}
+
+.testimonial b {
+  color: #ffd252;
+
+  font-size: 12px;
+}
+
+.testimonial p {
+  margin-top: 7px;
+
+  color: #eeeeee;
+
+  font-size: 12px;
+
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   ARTICLE
+========================================================= */
+
+.article-section {
+  padding: 25px 0 50px;
+
+  background: #f6f4ea;
+}
+
+.article-box {
+  padding: 19px;
+
+  border: 1px solid #808bfa;
+
+  border-radius: 10px;
+
+  background: rgba(255,255,255,.55);
+
+  font-size: 12px;
+}
+
+.article-box h2 {
+  margin-bottom: 12px;
+
+  color: #2d37a3;
+
+  font-size: 17px;
+
+  line-height: 1.3;
+}
+
+.article-box p {
+  color: #333333;
+}
+
+
+/* TAGS */
+
+.tags-title {
+  margin-top: 20px;
+
+  color: #222222;
+
+  font-weight: 900;
+}
+
+.tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 6px;
+
+  margin-top: 10px;
+}
+
+.tags a {
+  padding: 4px 9px;
+
+  border: 1px solid #6d77dc;
+
+  border-radius: 10px;
+
+  color: #252c96;
+
+  background: #ffffff;
+
+  font-size: 10px;
+
+  transition: .2s ease;
+}
+
+.tags a:hover {
+  background: #e9ebff;
+
+  transform: translateY(-1px);
+}
+
+
+/* SHARE */
+
+.article-box hr {
+  margin: 20px 0;
+
+  border: 0;
+
+  border-top: 1px solid #cccccc;
+}
+
+.share {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  color: #555555;
+}
+
+.share a {
+  width: 26px;
+  height: 26px;
+
+  display: grid;
+
+  place-items: center;
+
+  border: 1px solid #bbbbbb;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #333333;
+
+  font-size: 10px;
+
+  transition: .2s ease;
+}
+
+.share a:hover {
+  transform: translateY(-2px);
+
+  background: #171717;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+  padding-top: 42px;
+
+  background: #151520;
+
+  color: #dddddd;
+}
+
+.footer-grid {
+  display: grid;
+
+  grid-template-columns:
+    1.5fr
+    1fr
+    1fr
+    1fr;
+
+  gap: 40px;
+
+  padding-bottom: 35px;
+}
+
+.footer-grid > div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.footer-logo {
+  width: 150px;
+
+  height: auto;
+
+  margin-bottom: 8px;
+}
+
+.footer-grid h3 {
+  margin-bottom: 6px;
+
+  color: #efc843;
+
+  font-size: 13px;
+
+  font-weight: 900;
+}
+
+.footer-grid a {
+  color: #999999;
+
+  font-size: 12px;
+
+  transition: .2s ease;
+}
+
+.footer-grid a:hover {
+  color: #ffffff;
+
+  transform: translateX(2px);
+}
+
+
+/* SOCIAL */
+
+.social-icons {
+  display: flex;
+
+  gap: 7px;
+}
+
+.social-icons a {
+  width: 32px;
+  height: 32px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #292934;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  transition: .2s ease;
+}
+
+.social-icons a:hover {
+  background: #b99628;
+
+  color: #111111;
+
+  transform: translateY(-2px);
+}
+
+
+/* FOOTER BOTTOM */
+
+.footer-bottom {
+  padding: 15px;
+
+  border-top: 1px solid #292934;
+
+  color: #777777;
+
+  text-align: center;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   GENERAL PREMIUM HOVER
+========================================================= */
+
+.category-item,
+.shop-button,
+.red-button,
+.hoki-button,
+.social-icons a,
+.tags a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+  .top-inner {
+    gap: 20px;
+  }
+
+  .search-box {
+    display: none;
+  }
+
+  .category-inner {
+    justify-content: flex-start;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .banner-box img {
+    max-height: 650px;
+
+    object-fit: contain;
+  }
+
+  .footer-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .top-header {
+    height: 70px;
+  }
+
+  .top-inner {
+    justify-content: center;
+  }
+
+  .brand {
+    width: 155px;
+  }
+
+  .brand img {
+    width: 155px;
+  }
+
+  .category-inner {
+    min-height: 70px;
+
+    gap: 13px;
+
+    justify-content: flex-start;
+  }
+
+  .category-item {
+    min-width: 62px;
+  }
+
+  .category-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .auth-bar {
+    height: 46px;
+  }
+
+  .product-section {
+    padding: 25px 0 35px;
+  }
+
+  .banner-box {
+    border-radius: 12px;
+  }
+
+  .slider-button.left {
+    left: -7px;
+  }
+
+  .slider-button.right {
+    right: -7px;
+  }
+
+  .product-info h1 {
+    font-size: 22px;
+  }
+
+  .price {
+    font-size: 32px;
+  }
+
+  .product-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 14px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+  }
+
+  .footer-grid > div {
+    text-align: center;
+
+    align-items: center;
+  }
+
+  .footer-logo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .category-inner {
+    gap: 10px;
+  }
+
+  .category-item {
+    min-width: 58px;
+
+    font-size: 9px;
+  }
+
+  .category-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .product-info h1 {
+    font-size: 20px;
+  }
+
+  .price {
+    font-size: 29px;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+
+  .numbers {
+    gap: 5px;
+  }
+
+  .numbers span {
+    width: 31px;
+    height: 31px;
+  }
+
+}
+/* SEARCH BAR EFFECT */
+
+.search-box {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+
+  color: transparent;
+  font-size: 0;
+
+  box-shadow:
+    0 0 0 1px rgba(255, 40, 40, .15),
+    0 0 14px rgba(255, 30, 30, .12);
+
+  animation: searchGlow 2.5s ease-in-out infinite;
+}
+
+.search-box::after {
+  content: "KETIK DI GOOGLE '9NAGAWIN'";
+
+  position: absolute;
+
+  top: 50%;
+  left: 0;
+
+  transform: translateY(-50%);
+
+  white-space: nowrap;
+
+  color: #000003;
+
+  font-size: 14px;
+  font-weight: 900;
+
+  animation: searchRunning 5s linear infinite;
+}
+
+@keyframes searchRunning {
+  0% {
+    transform: translate(100%, -50%);
+  }
+
+  100% {
+    transform: translate(-100%, -50%);
+  }
+}
+
+@keyframes searchGlow {
+
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 1px rgba(255, 40, 40, .12),
+      0 0 10px rgba(255, 30, 30, .08);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(255, 60, 60, .35),
+      0 0 22px rgba(255, 30, 30, .25);
+  }
+
+}
+/* =========================================
+   9NAGAWIN PREMIUM EFFECT PACK
+========================================= */
+
+/* LOGO GLOW */
+.brand img {
+  filter:
+    drop-shadow(0 0 4px rgba(255, 180, 30, .25))
+    drop-shadow(0 0 10px rgba(255, 120, 0, .12));
+
+  transition:
+    transform .35s ease,
+    filter .35s ease;
+}
+
+.brand:hover img {
+  transform: scale(1.04);
+
+  filter:
+    drop-shadow(0 0 5px rgba(255, 210, 60, .65))
+    drop-shadow(0 0 16px rgba(255, 100, 0, .35));
+}
+
+
+/* =========================================
+   CATEGORY ICON — PULSE
+========================================= */
+
+.category-icon {
+  animation: categoryPulse 2.8s ease-in-out infinite;
+}
+
+.category-item:nth-child(3) .category-icon {
+  animation-delay: .25s;
+}
+
+.category-item:nth-child(4) .category-icon {
+  animation-delay: .5s;
+}
+
+.category-item:nth-child(5) .category-icon {
+  animation-delay: .75s;
+}
+
+.category-item:nth-child(6) .category-icon {
+  animation-delay: 1s;
+}
+
+.category-item:nth-child(7) .category-icon {
+  animation-delay: 1.25s;
+}
+
+.category-item:nth-child(8) .category-icon {
+  animation-delay: 1.5s;
+}
+
+.category-item:nth-child(9) .category-icon {
+  animation-delay: 1.75s;
+}
+
+@keyframes categoryPulse {
+
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 rgba(240, 200, 70, 0);
+  }
+
+  50% {
+    box-shadow:
+      0 0 16px rgba(240, 200, 70, .38),
+      inset 0 0 12px rgba(255, 220, 80, .18);
+  }
+
+}
+
+
+/* =========================================
+   LOGIN / DAFTAR — AUTO SHINE
+========================================= */
+
+.login-button::after,
+.register-button::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 45%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      110deg,
+      transparent,
+      rgba(255,255,255,.65),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  animation: buttonShine 4.5s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+.register-button::after {
+  animation-delay: 2.2s;
+}
+
+@keyframes buttonShine {
+
+  0%,
+  45% {
+    left: -120%;
+  }
+
+  60% {
+    left: 130%;
+  }
+
+  100% {
+    left: 130%;
+  }
+
+}
+
+
+/* =========================================
+   MAIN CTA — GLOW PULSE
+========================================= */
+
+.product-buttons .red-button {
+  animation: ctaGlow 2.8s ease-in-out infinite;
+}
+
+.product-buttons .red-button:nth-child(2) {
+  animation-delay: 1.4s;
+}
+
+@keyframes ctaGlow {
+
+  0%,
+  100% {
+    box-shadow:
+      0 4px 12px rgba(170,0,0,.30);
+  }
+
+  50% {
+    box-shadow:
+      0 6px 22px rgba(220,0,0,.45),
+      0 0 18px rgba(255,70,20,.18);
+  }
+
+}
+
+
+/* =========================================
+   BANNER — SOFT FLOAT
+========================================= */
+
+.banner-box {
+  animation: bannerFloat 4s ease-in-out infinite;
+}
+
+@keyframes bannerFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+
+}
+
+
+/* =========================================
+   BANNER LIGHT SWEEP
+========================================= */
+
+.banner-box {
+  position: relative;
+}
+
+.banner-box::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 45%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      105deg,
+      transparent,
+      rgba(255,255,255,.14),
+      transparent
+    );
+
+  transform: skewX(-18deg);
+
+  animation: bannerSweep 7s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+@keyframes bannerSweep {
+
+  0%,
+  65% {
+    left: -120%;
+  }
+
+  78% {
+    left: 130%;
+  }
+
+  100% {
+    left: 130%;
+  }
+
+}
+
+
+/* =========================================
+   PRODUCT TITLE — SOFT GOLD ACCENT
+========================================= */
+
+.product-info h1 {
+  position: relative;
+}
+
+.product-info h1::after {
+  content: "";
+
+  display: block;
+
+  width: 70px;
+  height: 3px;
+
+  margin-top: 10px;
+
+  border-radius: 5px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #e6b92f,
+      transparent
+    );
+
+  animation: titleLine 3s ease-in-out infinite;
+}
+
+@keyframes titleLine {
+
+  0%,
+  100% {
+    width: 55px;
+    opacity: .65;
+  }
+
+  50% {
+    width: 110px;
+    opacity: 1;
+  }
+
+}
+
+
+/* =========================================
+   PRICE — GOLD GLOW
+========================================= */
+
+.price {
+  animation: priceGlow 3s ease-in-out infinite;
+}
+
+@keyframes priceGlow {
+
+  0%,
+  100% {
+    text-shadow:
+      0 0 0 rgba(225,170,30,0);
+  }
+
+  50% {
+    text-shadow:
+      0 0 12px rgba(225,170,30,.22);
+  }
+
+}
+
+
+/* =========================================
+   FAQ HOVER
+========================================= */
+
+.faq-item {
+  transition: transform .2s ease;
+}
+
+.faq-item:hover {
+  transform: translateX(3px);
+}
+
+.faq-question {
+  transition:
+    background .25s ease,
+    color .25s ease,
+    padding-left .25s ease;
+}
+
+.faq-question:hover {
+  padding-left: 23px;
+
+  color: #ffd84d;
+}
+
+
+/* =========================================
+   TESTIMONIAL GLOW
+========================================= */
+
+.testimonial:hover {
+  border-color: #d0aa36;
+
+  box-shadow:
+    0 0 15px rgba(210,170,50,.14);
+}
+
+
+/* =========================================
+   HOKI NUMBERS
+========================================= */
+
+.numbers span {
+  animation: numberPulse 2.4s ease-in-out infinite;
+}
+
+.numbers span:nth-child(2) {
+  animation-delay: .3s;
+}
+
+.numbers span:nth-child(3) {
+  animation-delay: .6s;
+}
+
+.numbers span:nth-child(4) {
+  animation-delay: .9s;
+}
+
+@keyframes numberPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+    box-shadow:
+      0 0 15px rgba(255,50,20,.35);
+  }
+
+}
+
+
+/* =========================================
+   TAGS
+========================================= */
+
+.tags a {
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    background .2s ease;
+}
+
+.tags a:hover {
+  transform: translateY(-3px);
+
+  background: #fff8d8;
+
+  box-shadow:
+    0 4px 10px rgba(80,70,20,.15);
+}
+
+
+/* =========================================
+   SCROLL REVEAL FEEL
+========================================= */
+
+.info-box,
+.profile-box,
+.testimonial-box,
+.faq-box,
+.article-box {
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.info-box:hover,
+.profile-box:hover,
+.testimonial-box:hover,
+.faq-box:hover,
+.article-box:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,.13);
+}
+
+
+/* =========================================
+   FOOTER LOGO
+========================================= */
+
+.footer-logo {
+  filter:
+    drop-shadow(0 0 5px rgba(255,190,40,.15));
+
+  transition:
+    transform .3s ease,
+    filter .3s ease;
+}
+
+.footer-logo:hover {
+  transform: scale(1.04);
+
+  filter:
+    drop-shadow(0 0 12px rgba(255,190,40,.38));
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+
+}
+/* =========================================
+   9NAGAWIN — LIGHTNING LOGO EFFECT ⚡
+========================================= */
+
+.brand {
+  position: relative;
+  isolation: isolate;
+}
+
+.brand::before,
+.brand::after {
+  content: "";
+
+  position: absolute;
+
+  pointer-events: none;
+
+  z-index: -1;
+
+  opacity: 0;
+}
+
+
+/* PETIR UTAMA */
+
+.brand::before {
+  inset: -22px -28px;
+
+  background:
+    linear-gradient(
+      125deg,
+      transparent 18%,
+      rgba(255,255,255,.95) 19%,
+      transparent 20%,
+      transparent 36%,
+      rgba(255,220,60,.95) 37%,
+      transparent 38%,
+      transparent 58%,
+      rgba(255,255,255,.9) 59%,
+      transparent 60%,
+      transparent 76%,
+      rgba(255,180,20,.95) 77%,
+      transparent 78%
+    );
+
+  filter:
+    drop-shadow(0 0 5px #fff)
+    drop-shadow(0 0 12px #ffd21f)
+    drop-shadow(0 0 25px #ff5a00);
+
+  animation: lightningFlash 2.2s infinite;
+}
+
+
+/* AURA PETIR */
+
+.brand::after {
+  inset: -18px -25px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(255,210,40,.42) 0%,
+      rgba(255,80,0,.20) 35%,
+      transparent 70%
+    );
+
+  filter:
+    blur(5px)
+    drop-shadow(0 0 18px #ffb000);
+
+  animation: lightningAura 2.2s infinite;
+}
+
+
+/* LOGO SENDIRI */
+
+.brand img {
+  position: relative;
+  z-index: 2;
+
+  filter:
+    drop-shadow(0 0 3px #fff)
+    drop-shadow(0 0 8px rgba(255,210,40,.75))
+    drop-shadow(0 0 18px rgba(255,80,0,.55));
+
+  animation: logoElectric 2.2s infinite;
+
+  transition:
+    transform .25s ease,
+    filter .25s ease;
+}
+
+
+/* FLASH PETIR */
+
+@keyframes lightningFlash {
+
+  0%,
+  68%,
+  100% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: .15;
+  }
+
+  71% {
+    opacity: 1;
+  }
+
+  72% {
+    opacity: .15;
+  }
+
+  73% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: .05;
+  }
+
+  77% {
+    opacity: .9;
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+}
+
+
+/* AURA MENYALA */
+
+@keyframes lightningAura {
+
+  0%,
+  65%,
+  100% {
+    opacity: 0;
+    transform: scale(.85);
+  }
+
+  70% {
+    opacity: .35;
+    transform: scale(1);
+  }
+
+  73% {
+    opacity: .85;
+    transform: scale(1.08);
+  }
+
+  78% {
+    opacity: .2;
+    transform: scale(1.15);
+  }
+
+  82% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+
+}
+
+
+/* LOGO BERGETAR SEDIKIT SAAT PETIR */
+
+@keyframes logoElectric {
+
+  0%,
+  66%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  69% {
+    transform: translate(-1px, 1px);
+  }
+
+  70% {
+    transform: translate(2px, -1px);
+  }
+
+  71% {
+    transform: translate(-2px, 0);
+  }
+
+  72% {
+    transform: translate(1px, 1px);
+  }
+
+  74% {
+    transform: translate(0, 0);
+  }
+
+}
+
+
+/* SAAT MOUSE DI LOGO — PETIR LEBIH GILA */
+
+.brand:hover img {
+  transform: scale(1.06);
+
+  filter:
+    drop-shadow(0 0 4px #fff)
+    drop-shadow(0 0 10px #ffe34d)
+    drop-shadow(0 0 20px #ffae00)
+    drop-shadow(0 0 35px #ff3b00);
+
+  animation:
+    logoHoverElectric .35s infinite;
+}
+
+@keyframes logoHoverElectric {
+
+  0% {
+    transform: scale(1.06) translate(0,0);
+  }
+
+  25% {
+    transform: scale(1.06) translate(-2px,1px);
+  }
+
+  50% {
+    transform: scale(1.06) translate(2px,-1px);
+  }
+
+  75% {
+    transform: scale(1.06) translate(-1px,-1px);
+  }
+
+  100% {
+    transform: scale(1.06) translate(0,0);
+  }
+
+}
+/* =========================================
+   9NAGAWIN — DRAGON FIRE SHIMMER
+========================================= */
+
+.brand {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: visible;
+}
+
+/* Kilatan cahaya tipis yang melewati logo */
+.brand::after {
+  content: "";
+  position: absolute;
+
+  top: -10px;
+  left: -45%;
+
+  width: 28px;
+  height: 90px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.9),
+    rgba(255,190,30,.75),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  filter: blur(2px);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  animation: logoShimmer 4.5s ease-in-out infinite;
+}
+
+/* Glow asli logo — tipis saja */
+.brand img {
+  position: relative;
+  z-index: 2;
+
+  filter:
+    drop-shadow(0 0 2px rgba(255,210,70,.5))
+    drop-shadow(0 0 7px rgba(255,90,20,.22));
+
+  transition:
+    transform .3s ease,
+    filter .3s ease;
+}
+
+/* Kilatan berjalan */
+@keyframes logoShimmer {
+
+  0%,
+  55% {
+    left: -45%;
+    opacity: 0;
+  }
+
+  60% {
+    opacity: .9;
+  }
+
+  72% {
+    left: 125%;
+    opacity: .8;
+  }
+
+  78%,
+  100% {
+    left: 125%;
+    opacity: 0;
+  }
+}
+
+/* Hover sedikit lebih terang */
+.brand:hover img {
+  transform: scale(1.045);
+
+  filter:
+    drop-shadow(0 0 3px rgba(255,255,255,.7))
+    drop-shadow(0 0 8px rgba(255,210,50,.7))
+    drop-shadow(0 0 14px rgba(255,70,15,.35));
+}
+/* =========================================
+   CLEAN LOGIN / DAFTAR BAR
+========================================= */
+
+/* Matikan shine yang terlalu lebar */
+.login-button::after,
+.register-button::after {
+  display: none !important;
+}
+
+/* Tetap kasih glow halus */
+.login-button,
+.register-button {
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.08),
+    0 2px 8px rgba(0,0,0,.18);
+
+  transition:
+    filter .25s ease,
+    box-shadow .25s ease;
+}
+
+.login-button:hover {
+  filter: brightness(1.08);
+
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.12),
+    0 0 16px rgba(255,0,0,.22);
+}
+
+.register-button:hover {
+  filter: brightness(1.08);
+
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.12),
+    0 0 16px rgba(40,255,0,.20);
+}
+
+
+/* =========================================
+   TOMBOL DAFTAR / LOGIN DI BAWAH
+   tetap punya shine premium
+========================================= */
+
+.product-buttons .red-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-buttons .red-button::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 42%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      105deg,
+      transparent,
+      rgba(255,255,255,.55),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  animation: ctaShine 4.5s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+.product-buttons .red-button:nth-child(2)::after {
+  animation-delay: 2.2s;
+}
+
+@keyframes ctaShine {
+
+  0%,
+  50% {
+    left: -120%;
+  }
+
+  65% {
+    left: 130%;
+  }
+
+  100% {
+    left: 130%;
+  }
+
+}
